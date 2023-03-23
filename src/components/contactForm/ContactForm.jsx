@@ -1,7 +1,7 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
 
-export default function ContactForm() {
+export default function ContactForm({ onAddContact }) {
   const [name, setName] = React.useState('');
   const [number, setNumber] = React.useState('');
 
@@ -23,7 +23,7 @@ export default function ContactForm() {
       number: number,
     };
 
-    this.props.onAddContact(contact);
+    onAddContact(contact);
 
     setName('');
     setNumber('');
