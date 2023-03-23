@@ -1,5 +1,6 @@
 import React from 'react';
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types';
 
 export default function ContactForm({ onAddContact }) {
   const [name, setName] = React.useState('');
@@ -59,3 +60,7 @@ export default function ContactForm({ onAddContact }) {
     </div>
   );
 }
+
+ContactForm.propTypes = {
+  onAddContact: PropTypes.func.isRequired,
+};

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ReactPropTypes from 'prop-types';
 
 function Filter({ filter = '', onFilterChange }) {
@@ -9,7 +8,7 @@ function Filter({ filter = '', onFilterChange }) {
       type="text"
       name="filter"
       value={filter}
-      onChange={(e) => onFilterChange(e.target.value)}
+      onChange={e => onFilterChange(e.target.value)}
     />
   );
 }
