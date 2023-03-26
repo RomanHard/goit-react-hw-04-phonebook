@@ -1,20 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import ContactForm from './contactForm/ContactForm';
 import Filter from './filter/Filter';
 import ContactList from './contactList/ContactList';
 
 export default function App() {
-  const [contacts, setContacts] = React.useState([]);
-  const [filter, setFilter] = React.useState('');
+  const [contacts, setContacts] = useState([]);
+  const [filter, setFilter] = useState('');
 
-  React.useEffect(() => {
+useEffect(() => {
     const contactsFromStorage = localStorage.getItem('contacts');
     if (contactsFromStorage) {
       setContacts(JSON.parse(contactsFromStorage));
     }
   }, []);
 
-  React.useEffect(() => {
+useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
